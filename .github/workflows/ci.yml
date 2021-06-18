@@ -15,6 +15,6 @@ jobs:
       - name: Check app version
         id  : appVersion
         env :
-          CONTENT: ${{ cat ./package.json }}
+          CONTENT: cat ./package.json
         run: |
           echo $CONTENT
