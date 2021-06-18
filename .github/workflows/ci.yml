@@ -19,4 +19,4 @@ jobs:
       
       - name: Read app version
         id  : version
-        run : echo ${{ env.JSON }}
+        run : echo ${{ fromJSON(env.JSON).version }}
