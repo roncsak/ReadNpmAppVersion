@@ -20,3 +20,7 @@ jobs:
       - name: Read app version
         id  : version
         run : echo ${{ fromJSON(env.JSON).version }}
+      
+      - name: GitHub context
+        run : echo ${{ github }}
+
