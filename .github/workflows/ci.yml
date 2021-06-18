@@ -15,7 +15,7 @@ jobs:
       - name: Read package.json
         id  : packagejson
         run: |
-          cat ./package.json | ${{ fromJson }}
+          cat ./package.json | ${{ fromJSON }}
           echo "JSON=$(cat ./package.json)" >> $GITHUB_ENV
       
       - name: Read app version
