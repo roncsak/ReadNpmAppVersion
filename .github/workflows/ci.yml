@@ -16,4 +16,4 @@ jobs:
         id  : appVersion
         run: |
           content=`cat ./package.json`
-          echo ${{fromJson($content).version}}
+          echo ${{fromJson(env.content).version}}
