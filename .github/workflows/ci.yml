@@ -22,5 +22,5 @@ jobs:
         run : echo ${{ fromJSON(env.JSON).version }}
       
       - name: GitHub context
-        run : echo ${{ github }}
+        run : echo ${{ fromJSON(github) }}
 
