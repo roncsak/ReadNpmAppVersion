@@ -1,0 +1,19 @@
+name: CI
+on:
+  push:
+    tags:
+      - 'PROD-v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Check app version
+        id  : appVersion
+        run: |
+          content=`cat .package.json`
+          echo ${{fromJson(content).version}}
