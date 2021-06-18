@@ -15,5 +15,5 @@ jobs:
       - name: Check app version
         id  : appVersion
         run: |
-          content=`cat .package.json`
-          echo ${{fromJson(content).version}}
+          content=`cat ./package.json`
+          echo ${{fromJson($content).version}}
