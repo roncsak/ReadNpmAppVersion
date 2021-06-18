@@ -12,9 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Check app version
-        id  : appVersion
-        env :
-          CONTENT: cat ./package.json
+      - name: Read package.json
+        id  : packagejson
         run: |
-          echo $CONTENT
+          echo `JSON=${ cat ./package.json }` >> $GITHUB_ENV
+      
+      - name: Read app version
+        id  : version
+        run : echo ${{ env.JSON }}
