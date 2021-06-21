@@ -24,5 +24,7 @@ jobs:
       - name: GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run : echo "$GITHUB_CONTEXT"
+        run : |
+          echo ${{ endsWith(GITHUB_REF, fromJSON(env.JSON).version) }}
+          echo "$GITHUB_CONTEXT"
 
